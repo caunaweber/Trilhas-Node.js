@@ -1,0 +1,19 @@
+1. um ambiente de execução que permite rodar o JS fora do navegador, é muito popular pela performance, escalabilidade versatilidade 
+
+2. node é um ambiente de execução de JS, apache é um servidor web para hospedar conteúdo web como HTML, CSS e JS
+
+3. npm init
+
+4. é um framework para Node.js que facilita o desenvolvimento de aplicações web
+
+5. é a função que faz a comunicação entre requisições e respostas da API durante uma requisição HTTP
+
+6. utilizando métodos como app.get /.put /.delete /.post
+
+7. é um método que permite o Node interpretar o conteúdo de uma requisição, já que por padrão ele não entende, o método body-parser converte o conteúdo para um objeto JS
+
+8. Get (receber informações) Post (enviar informações) Put/Patch (Atualizar informações) Delete (deletar informações)
+
+9. No Express, erros são tratados usando middlewares especiais de erro, que têm quatro parâmetros: (err, req, res, next)
+
+10. é uma api que segue os princípios da arquitetura REST (Representational State Transfer), permite comunicações via métodos HTTP como GET, POST, DELETE e PUT
