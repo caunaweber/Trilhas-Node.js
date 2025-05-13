@@ -16,12 +16,19 @@ let games = [
     {title: "FIFA 24", studio: "EA Sports", price: "150"}
 ];
 
-app.listen(3080,() => {
-    console.log("Servidor rodando");
-});
+const buscarPorNome = (nomeGame) => {
+    return games.filter(n => n.title.toLocaleLowerCase().includes(nomeGame.toLocaleLowerCase()));
+}
 
 app.get("/", (req, res) => {
-    res.json(games);
+    const nomeGame = req.query.busca;
+    const resultado = nomeGame? buscarPorNome(nomeGame): games;
+
+    if(resultado.length > 0){
+        res.json(resultado)
+    }else{
+        res.status(404).send({"erro": "Nenhum jogo encontrado"})
+    }
 })
 
 app.post("/novogame", (req, res) => {
@@ -59,3 +66,7 @@ app.delete("/:index", (req, res) => {
 
     return res.json({message: "O jogo foi deletado"})
 })
+
+app.listen(3080,() => {
+    console.log("Servidor rodando");
+});
